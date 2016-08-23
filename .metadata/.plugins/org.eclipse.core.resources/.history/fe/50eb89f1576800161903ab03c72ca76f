@@ -1,0 +1,11 @@
+package ru.lexpr.datasync;
+
+import static java.lang.System.out;
+
+public class Program {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

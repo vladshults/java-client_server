@@ -1,0 +1,12 @@
+package ru.lexpr.math;
+
+public class Integral {
+	
+	public static final int STEPS = 10000000;
+	public static final int THREADS = 10;
+	volatile double result = 0.0;
+	
+	privat Integral() {
+	}
+
+}

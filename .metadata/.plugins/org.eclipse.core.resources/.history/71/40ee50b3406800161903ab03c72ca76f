@@ -1,0 +1,11 @@
+package ru.lexpr.processtart;
+
+import java.io.IOException;
+
+public class Program {
+	public static void main(String[] args) throws IOException {
+		System.out.println("process starting...");
+		Runtime.getRuntime().exec("cmd /C dir c:\");
+		
+	}
+}

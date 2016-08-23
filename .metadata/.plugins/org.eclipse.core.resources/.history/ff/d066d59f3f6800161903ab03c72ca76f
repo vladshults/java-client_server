@@ -1,0 +1,6 @@
+package ru.lexpr.processtart;
+
+public class Program {
+	public static void main(String[] args)
+
+}

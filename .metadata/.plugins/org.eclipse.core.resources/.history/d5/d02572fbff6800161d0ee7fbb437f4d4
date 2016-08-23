@@ -1,0 +1,14 @@
+package ru.lexpr.sinarcsinsync;
+
+public class Program {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		class Sync {
+			volatile double x = 1d;
+			volatile boolean isSin = true;
+		}
+		
+	}
+
+}

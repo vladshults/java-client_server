@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;ru.lexpr.processtart.Programm.java&apos; to &apos;Program.java&apos;&#x0D;&#x0A;- Original project: &apos;ProcessStart&apos;&#x0D;&#x0A;- Original element: &apos;ru.lexpr.processtart.Programm.java&apos;&#x0D;&#x0A;- Renamed element: &apos;ru.lexpr.processtart.Program.java&apos;" description="Rename compilation unit &apos;Programm.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;ru.lexpr.processtart{Programm.java" name="Program.java" references="false" stamp="1471853276926" version="1.0"/>
+</session>

@@ -1,0 +1,27 @@
+package ru.lexpr.eventsync;
+
+import static java.lang.System.out;
+
+public class Program {
+	
+	public static void main(String[] args) {
+		
+		Thread t1,t2;
+		
+		(t1 = new Thread(()->{
+			for(int i=1; i<=100000; i++) {
+				sync.increment();
+				nums.add(i);
+			}
+		}, "A")).start();
+		
+		(t2 = new Thread(()->{
+			for(int i=1; i<=100000; i++) {
+				sync.increment();
+				nums.add(i);
+			}
+		}, "B")).start();
+		
+	}
+
+}

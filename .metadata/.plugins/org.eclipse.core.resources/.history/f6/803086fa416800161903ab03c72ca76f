@@ -1,0 +1,16 @@
+package ru.lexpr.processtart;
+
+import java.io.IOException;
+import java.io.*;
+
+public class Program {
+	public static void main(String[] args) throws IOException {
+		System.out.println("process starting...");
+		Process p = Runtime.getRuntime().exec("cmd /C dir c:\\");
+		InputStream in = p.getInputStream();
+		BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+		
+		String s;
+		while((s = reader.readline()) != null)
+	}
+}

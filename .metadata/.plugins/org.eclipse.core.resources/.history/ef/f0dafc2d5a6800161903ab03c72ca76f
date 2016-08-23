@@ -1,0 +1,39 @@
+package ru.lexpr.datasync;
+
+import static java.lang.System.out;
+
+public class Program {
+	
+	static int counter = 0;
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		Thread t1,t2;
+		//final Thread main = Thread.currentThread();
+		
+		Object sync = new Object();
+		
+		(t1 = new Thread(()->{
+			for(int i=1; i<=100000; i++) {
+				//out.printf("%s : %d\n", Thread.currentThread().getName(), i);
+				//counter++;
+				synchronized (sync) {
+					counter = counter + 1;
+				}
+				}
+		}, "A")).start();
+		
+		(t2 = new Thread(()->{
+			for(int i=1; i<=100000; i++) {
+				//out.printf("%s : %d\n", Thread.currentThread().getName(), i);
+				//counter++;
+				counter = counter + 1;
+				}
+		}, "B")).start();
+		
+		t1.join();
+		t2.join();
+		
+		out.println(counter);
+	}
+}

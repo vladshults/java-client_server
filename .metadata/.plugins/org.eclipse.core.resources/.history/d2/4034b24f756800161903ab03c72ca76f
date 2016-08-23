@@ -1,0 +1,11 @@
+package ru.lexpr.datasync;
+
+
+public class Program {
+	public static void main(String[] args) throws InterruptedException {
+		long t1 = System.currentTimeMillis();
+		double r1 = Integral.multiThread(Math::sin, 0d, Math.PI/2);
+		long t2 = System.currentTimeMillis();
+		
+	}
+}
