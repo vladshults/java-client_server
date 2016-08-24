@@ -2,6 +2,7 @@ package ru.lexpr.dbselect;
 
 import static java.lang.System.out;
 import java.sql.*;
+import java.util.Scanner;
 
 
 public class Program {
@@ -13,10 +14,28 @@ public class Program {
 		
 		Class.forName(driverClass);
 		
+		out.print("Поиск: ");
+		Scanner scanner = new Scanner(System.in);
+		String search = scanner.nextLine().trim();
+		scanner.close();
+		
 		Connection con = DriverManager.getConnection(connString);
-		String sql = "SELECT title, length FROM Courses ORDER BY title";
-		Statement cmd = con.createStatement();
-		ResultSet result = cmd.executeQuery(sql);
+		//String sql = "SELECT title, length FROM Courses "
+		//			+"WHERE title LIKE '%" + search + "%' "
+		//			+"ORDER BY title";
+		//INSERT INTO courses (title, length, description)
+		//VALUES (?, ?, ?)
+		
+		String sql = "SELECT title, length FROM Courses "
+					+"WHERE title LIKE ? "
+					+"ORDER BY title";
+		
+		PreparedStatement cmd = con.prepareStatement(sql);
+		cmd.setString(1, "%" + search + "%");
+		ResultSet result = cmd.executeQuery();
+		
+		//Statement cmd = con.createStatement();
+		//ResultSet result = cmd.executeQuery(sql);
 		while(result.next()) {
 			String title = result.getString("title");
 			int length = result.getInt("length");
